@@ -1,0 +1,5 @@
+Design and code a program that reads a text file, 
+and counts the number of times each word that it contains appears 100.
+This file is used to test the word counter program. 
+The design of the program should handle all cases like design, Design, or DESIGn, 
+and ignore numbers like 123 or punctuation! This should also ignore words such as 'and', 'the', and 'it'.
