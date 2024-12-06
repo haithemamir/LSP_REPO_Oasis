@@ -7,8 +7,8 @@ public class RandomNumberClient {
     public static void main(String[] args) {
         RandomNumberService service = RandomNumberService.getInstance();
 
-        // Use Java's random number generator
-        service.setGenerator(new JavaRandomNumberGenerator());
+        // Use Java's built-in random number generator (BuiltInRandomNumberStrategy)
+        service.setGenerator(new BuiltInRandomNumberStrategy());
         System.out.println("Random number using Java's Random: " + service.getRandomNumber());
 
         // Use custom random number generator

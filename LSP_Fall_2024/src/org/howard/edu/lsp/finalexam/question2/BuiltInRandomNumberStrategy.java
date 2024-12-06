@@ -2,14 +2,13 @@ package org.howard.edu.lsp.finalexam.question2;
 
 import java.util.Random;
 
-        /**
-         * Implementation of RandomNumberStrategy using Java's built-in Random class.
-         */
-public class BuiltInRandomNumberStrategy implements RandomNumberStrategy {
-    private Random random = new Random();
-
+/**
+ * Implementation of RandomNumberGenerator using Java's built-in Random class.
+ */
+public class BuiltInRandomNumberStrategy implements RandomNumberGenerator {
     @Override
-    public int generateRandomNumber() {
-        return Math.abs(random.nextInt());
+    public int generate() {
+        Random random = new Random();
+        return random.nextInt(Integer.MAX_VALUE) + 1; // Ensure positive numbers
     }
 }

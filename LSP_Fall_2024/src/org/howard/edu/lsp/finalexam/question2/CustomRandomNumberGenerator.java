@@ -1,14 +1,13 @@
 package org.howard.edu.lsp.finalexam.question2;
 
 /**
- * Custom implementation of RandomNumberGenerator using a simple algorithm.
+ * Custom implementation of RandomNumberGenerator.
  */
 public class CustomRandomNumberGenerator implements RandomNumberGenerator {
-    private long seed = System.currentTimeMillis();
-
     @Override
-    public int generateRandomNumber() {
-        seed = (seed * 48271) % 2147483647; // LCG formula
-        return (int) Math.abs(seed);
+    public int generate() {
+        // Custom algorithm for generating a random number
+        long seed = System.currentTimeMillis();
+        return (int) ((seed % Integer.MAX_VALUE) + 1); // Ensure positive numbers
     }
 }

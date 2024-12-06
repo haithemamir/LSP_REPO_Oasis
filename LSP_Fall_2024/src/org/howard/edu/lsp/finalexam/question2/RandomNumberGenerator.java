@@ -1,12 +1,8 @@
 package org.howard.edu.lsp.finalexam.question2;
 
 /**
- * Interface for random number generation strategies.
+ * Interface for random number generator strategies.
  */
 public interface RandomNumberGenerator {
-    /**
-     * Generates a random positive integer.
-     * @return a random positive integer.
-     */
-    int generateRandomNumber();
+    int generate();
 }

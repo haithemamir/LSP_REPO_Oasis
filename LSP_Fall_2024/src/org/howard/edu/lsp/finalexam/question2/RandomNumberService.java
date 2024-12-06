@@ -1,22 +1,15 @@
 package org.howard.edu.lsp.finalexam.question2;
 
 /**
- * Singleton service for generating random numbers using different strategies.
+ * Singleton service class for managing random number generation.
  */
 public class RandomNumberService {
     private static RandomNumberService instance;
-
     private RandomNumberGenerator generator;
 
-    /**
-     * Private constructor to prevent instantiation.
-     */
     private RandomNumberService() {}
 
-    /**
-     * Retrieves the singleton instance of RandomNumberService.
-     * @return the singleton instance.
-     */
+    // Singleton instance getter
     public static RandomNumberService getInstance() {
         if (instance == null) {
             instance = new RandomNumberService();
@@ -24,23 +17,16 @@ public class RandomNumberService {
         return instance;
     }
 
-    /**
-     * Sets the random number generator strategy.
-     * @param generator the strategy to use for random number generation.
-     */
+    // Set the random number generator strategy
     public void setGenerator(RandomNumberGenerator generator) {
         this.generator = generator;
     }
 
-    /**
-     * Generates a random number using the current strategy.
-     * @return a random positive integer.
-     * @throws IllegalStateException if no generator is set.
-     */
+    // Generate a random number using the current strategy
     public int getRandomNumber() {
         if (generator == null) {
-            throw new IllegalStateException("No random number generator strategy set");
+            throw new IllegalStateException("Random number generator is not set");
         }
-        return generator.generateRandomNumber();
+        return generator.generate();
     }
 }
